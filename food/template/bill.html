@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bill</title>
+</head>
+<body>
+{% load static %}
+
+<center><h1>BILL</h1></center>
+<div>
+
+    <strong>qty</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>name</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>price</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    {% for a,b,c in f %}
+
+    <strong>{{ a }}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <strong>{{ b }}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <strong>{{ c }}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    <strong>Total</strong>   <strong>{{ftotal}}</strong>
+<!--    <strong style="margin-left:10px">{{qty}}</strong>-->
+<!--    <strongstyle="margin-left:10px">{{total}}</strong>-->
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" id="print" name="print" value="print">
+    </form>
+</div>
+<p id="hey"> </p>
+
+<script>document.getElementById("hey").innerHTML = "hey"</script>
+
+
+</body>
+</html>
